@@ -619,6 +619,7 @@ $(function ()
             create:function (event, ui)
             {
                 initExplorer();
+                initCloudExplorer();
                 initModifyUi();
             }
         });

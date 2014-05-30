@@ -17,13 +17,7 @@
 package com.netflix.exhibitor.core.rest.jersey;
 
 import com.google.common.collect.Sets;
-import com.netflix.exhibitor.core.rest.ClusterResource;
-import com.netflix.exhibitor.core.rest.ConfigResource;
-import com.netflix.exhibitor.core.rest.ExplorerResource;
-import com.netflix.exhibitor.core.rest.IndexResource;
-import com.netflix.exhibitor.core.rest.UIContext;
-import com.netflix.exhibitor.core.rest.UIContextResolver;
-import com.netflix.exhibitor.core.rest.UIResource;
+import com.netflix.exhibitor.core.rest.*;
 import com.sun.jersey.api.core.DefaultResourceConfig;
 import com.sun.jersey.api.core.ResourceConfig;
 import java.util.Set;
@@ -75,6 +69,7 @@ public class JerseySupport
         classes.add(UIResource.class);
         classes.add(IndexResource.class);
         classes.add(ExplorerResource.class);
+        classes.add(CloudExplorerResource.class);
         classes.add(ClusterResource.class);
         classes.add(ConfigResource.class);
         return classes;

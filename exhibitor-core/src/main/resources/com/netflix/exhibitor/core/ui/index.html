@@ -20,6 +20,7 @@
         <script type="text/javascript" src="js/exhibitor-index.js"></script>
         <script type="text/javascript" src="js/exhibitor-cluster.js"></script>
         <script type="text/javascript" src="js/exhibitor-explorer.js"></script>
+        <script type="text/javascript" src="js/exhibitor-cloud-explorer.js"></script>
         <script type="text/javascript" src="js/exhibitor-modify.js"></script>
         <script type="text/javascript" src="js/exhibitor.js"></script>
         <script type="text/javascript" src="js/jquery.dataTables.js"></script>
@@ -50,6 +51,7 @@
             </div>
 
             <ul id="tabs-list">
+                <li><a href="#tabs-explorer-cloud">Test Cloud Explorer</a></li>
                 <li><a href="#tabs-main">Control Panel</a></li>
                 <li><a href="#tabs-explorer">Explorer</a></li>
                 <li><a href="#tabs-config">Config</a></li>
@@ -122,6 +124,33 @@
                     <button id="explorer-button-analyze">Analyze...</button>
                     <button id="explorer-button-usage-listing">Usage Listing...</button>
                 </div>
+            </div>
+
+            <div id="tabs-explorer-cloud" class="ui-helper-hidden">
+                <table style="width: 100%">
+                    <tr style="vertical-align: top">
+                        <td style="width: 50%;">
+                            <div class="info">
+                                <strong>Test Cloud data tree</strong><br>
+                                <div id="cloud-tree"></div>
+                            </div>
+                        </td>
+                        <td style="width: 50%">
+                            <div class="info">
+                                <strong>Node Data</strong><br><textarea id="cloud-data-str"></textarea>
+                            </div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <strong>Path</strong><br><span id="cloud-path"></span><br>
+                            <strong>Stat</strong><br><span id="cloud-stat"></span><br>
+                            <div id="cloud-explorer-buttons" class="ui-helper-hidden">
+                                <button id="cloud-explorer-button-modify">Modify...</button>
+                            </div>
+                        </td>
+                    </tr>
+                </table>
             </div>
 
             <div id="tabs-config" class="ui-helper-hidden">
