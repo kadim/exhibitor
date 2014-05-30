@@ -1,5 +1,5 @@
 var URL_CLOUD_EXPLORER_NODE = "../cloudExplorer/node-with-href";
-var TEST_CLOUD_ROOT = "/DavisRealRun/Baseline";
+var TEST_CLOUD_ROOT = getParameterByName("rootNode") == "" ? "/DavisRealRun/Baseline" : getParameterByName("rootNode");
 var cloudExplorerSelectedPath = null;
 var cloudExplorerSelectedBytes = null;
 var cloudExplorerInitialExpandDone = false
@@ -36,7 +36,7 @@ function initCloudExplorer()
         selectMode:1,
 
         children:[
-            {title:"TestCloud", isFolder:true, isLazy:true, key:TEST_CLOUD_ROOT, noLink:true}
+            {title:"TestCloud", isFolder:true, isLazy:true, key: TEST_CLOUD_ROOT, noLink:true}
         ],
 
         onLazyRead: populateChildren,
@@ -105,11 +105,6 @@ function initCloudExplorer()
         openModifyDialog("update", cloudExplorerSelectedPath, localData, localDataType);
         return false;
     });
-
-//    TEST_CLOUD_ROOT
-//    var selectedNode = $("#cloud-tree").dynatree("getTree").getNodeByKey("/DavisRealRun/Baseline/TestJob-3-Nodes-test-run-2");
-//    var selectedNode = $("#cloud-tree").dynatree("getTree").getNodeByKey(getParameterByName("selectedKey"));
-//    selectedNode.activate();
 
 }
 function getParameterByName(name) {
