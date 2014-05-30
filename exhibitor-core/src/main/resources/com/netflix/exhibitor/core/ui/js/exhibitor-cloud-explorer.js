@@ -36,7 +36,7 @@ function initCloudExplorer()
         selectMode:1,
 
         children:[
-            {title:"TestCloud", isFolder:true, isLazy:true, key: TEST_CLOUD_ROOT, noLink:true}
+            {title:TEST_CLOUD_ROOT, isFolder:true, isLazy:true, key: TEST_CLOUD_ROOT, noLink:true}
         ],
 
         onLazyRead: populateChildren,
