@@ -49,7 +49,7 @@ class SmartSort
             {
                 for ( String node : children )
                 {
-                    if ( node.length() >= formatPattern.length() )
+                    if ( node.length() >= formatPattern.length() && node.substring(node.length() - formatPattern.length()).matches("[\\d]+"))
                     {
                         format.parse(node.substring(node.length() - formatPattern.length()));
                     }

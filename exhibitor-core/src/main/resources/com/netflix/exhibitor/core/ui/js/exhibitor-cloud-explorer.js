@@ -21,6 +21,16 @@ function initCloudExplorer()
                         cloudExplorerSelectedBytes = data.bytes;
 
                         $("#cloud-path").text(node.data.key);
+                        if (node.data.key.indexOf("/EventLog") > 0 || node.data.key.match(".+/Jobs/[^/]+")) {
+                            $("#cloud-path").append("&nbsp;&nbsp;&nbsp;");
+                            if (node.data.key.match(".+/Jobs/[^/]+")) {
+                                $("#cloud-path").append($("<a target='_blank' href='cloud-viewer/index.html?nodeKey=" +
+                                node.data.key + "/EventLog'>Timeline&nbsp;&gt;&gt;</a>"))
+                            } else {
+                                $("#cloud-path").append($("<a target='_blank' href='cloud-viewer/index.html?nodeKey=" +
+                                node.data.key + "'>Timeline&nbsp;&gt;&gt;</a>"))
+                            }
+                        }
                         $("#cloud-stat").text(data.stat);
                         $("#cloud-data-bytes").text(data.bytes);
                         $("#cloud-data-str").text(data.str);
@@ -57,7 +67,7 @@ function initCloudExplorer()
         (
             {
                 url: URL_CLOUD_EXPLORER_NODE,
-                data: {"key": node.data.key, "href_suffix": "#tabs-explorer-cloud", "href_prefix": "?selectedKey="},
+                data: {"key": node.data.key, "href_suffix": "#tabs-explorer-cloud", "href_prefix": "?rootNode=" + TEST_CLOUD_ROOT + "&selectedKey="},
                 cache: false,
                 success: function(node) {
                     var selectedKey = getParameterByName("selectedKey");
